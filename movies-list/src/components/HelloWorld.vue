@@ -1,7 +1,7 @@
 <template>
   <div class="content">
-    <h1>{{ msg }}</h1>
-    <p>あらすじを読んで「絶対見たくない」と心に誓った映画、<br>うっかり見てしまい「二度と見ない」と決心した映画。</p>
+    <h1 class="page-title">{{ msg }}</h1>
+    <p class="text01">あらすじを読んで「絶対見たくない」と心に誓った映画、<br>うっかり見てしまい「二度と見ない」と決心した映画。</p>
     <ul class="movie-list">
       <li v-for="(movie, index) in moviesList" :key="index" class="movie-item">
         <p class="movie-title">{{ movie.title }}</p>
@@ -38,9 +38,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
 ul {
   list-style-type: none;
   padding: 0;
@@ -49,20 +46,21 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
+.page-title {
+  letter-spacing: 0.05em;
 }
-p {
+.text01 {
   line-height: 2;
   font-size: 15px;
   letter-spacing: 0.05em;
+  margin: 0 auto 80px;
 }
 .content {
   width: 1024px;
   margin: 0 auto;
 }
 .movie-title {
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 600;
   margin: 0 auto 30px;
 }
