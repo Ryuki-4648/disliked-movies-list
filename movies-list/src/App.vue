@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img alt="ぜったいに見たくない映画リスト" src="./assets/logo01.png">
+    <img alt="ぜったいに見たくない映画リスト" src="./assets/logo.png" class="logo">
     <HelloWorld msg="ぜったいに見たくない映画リスト"/>
   </div>
 </template>
@@ -21,8 +21,10 @@ export default {
   font-family: YuGothic,'Yu Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.logo {
+  display: block;
+  margin: 80px auto 140px;
 }
 </style>
