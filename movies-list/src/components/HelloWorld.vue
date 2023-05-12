@@ -1,29 +1,43 @@
 <template>
-  <div class="content">
-    <h1 class="page-title">{{ msg }}</h1>
-    <p class="text01">あらすじを読んで「絶対見たくない」と心に誓った映画、<br>うっかり見てしまい「二度と見ない」と決心した映画を集めました。</p>
+  <main class="content">
+    <section class="intro">
+      <h1 class="page-title">{{ msg }}</h1>
+      <p class="text01">あらすじを読んで「絶対見たくない」と心に誓った映画、<br>うっかり見てしまい「二度と見ない」と決心した映画を集めました。</p>
+    </section>
 
-    <p class="text02">あなたの、「見たくない映画」はありますか？</p>
-    <div class="search-area">
-      <input type="text" placeholder="エイガ ノ タイトル ヲ ニュウリョク" class="search-box" v-model="vueSearch">
-      <button class="search-btn" @click="getFilterOutput">サガす</button>
-    </div>
-    <ul class="movie-list">
-      <li v-for="(movie, index) in movies" :key="index" class="movie-item">
-        <p class="movie-title">{{ movie.title }}</p>
-        <table class="movie-table">
-          <tr>
-            <th>作品について</th>
-            <td>{{ movie.description }}</td>
-          </tr>
-          <tr>
-            <th>見たくない理由</th>
-            <td>{{ movie.reason }}</td>
-          </tr>
-        </table>
-      </li>
-    </ul>
-  </div>
+    <section class="search">
+      <p class="text02">あなたの、「見たくない映画」はありますか？</p>
+      <div class="search-area">
+        <input type="text" placeholder="エイガ ノ タイトル ヲ ニュウリョク" class="search-box" v-model="vueSearch">
+        <button class="search-btn" @click="filterButton">サガす</button>
+        <p class="reset-btn" @click="resetButton">リセット</p>
+      </div>
+    </section>
+
+    <section class="list">
+      <ul class="movie-list">
+        <li v-for="(movie, index) in movies" :key="index" class="movie-item">
+          <p class="movie-title">{{ movie.title }}</p>
+          <table class="movie-table">
+            <tr>
+              <th>作品について</th>
+              <td>{{ movie.description }}</td>
+            </tr>
+            <tr>
+              <th>監督</th>
+              <td>{{ movie.director }}</td>
+            </tr>
+            <tr>
+              <th>見たくない理由</th>
+              <td>{{ movie.reason }}</td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </section>
+
+  <a href="/" class="page-top">オサナイデ</a>
+  </main>
 </template>
 
 <script>
@@ -41,12 +55,15 @@ export default {
     };
   },
   methods: {
-    getFilterOutput: function(){
+    filterButton: function(){
       const searchVal = this.vueSearch;
       const filterData = this.movies.filter(function(movie){
         return movie.title.indexOf(searchVal) !== -1;
       });
       this.movies = filterData;
+    },
+    resetButton: function(){
+      location.reload();
     }
   }
 }
@@ -65,13 +82,18 @@ li {
 p {
   letter-spacing: 0.05em;
 }
+a {
+  text-decoration: none;
+}
 .page-title {
   letter-spacing: 0.05em;
+}
+.intro {
+  margin: 0 auto 140px;
 }
 .text01 {
   line-height: 2;
   font-size: 15px;
-  margin: 0 auto 100px;
 }
 .text02 {
   line-height: 2;
@@ -82,15 +104,21 @@ p {
 .content {
   width: 1024px;
   margin: 0 auto;
+  padding: 0 0 100px;
+  position: relative;
+}
+.search {
+  margin: 0 auto 80px;
 }
 .search-area {
-  margin: 0 auto 100px;
+  display: flex;
+  align-items: center;
 }
 .search-box {
   margin: 0 20px 0 0;
   border: 1px solid #ddd;
-  width: 320px;
-  height: 28px;
+  width: 360px;
+  height: 32px;
   padding: 1px 6px;
 }
 .search-btn {
@@ -100,10 +128,21 @@ p {
   font-size: 13px;
   letter-spacing: 0.05em;
   font-weight: 600;
-  width: 100px;
-  height: 27px;
+  width: 120px;
+  height: 28px;
   cursor: pointer;
   transition: all .3s;
+  padding: 2px 0 0 0;
+  margin: 0 30px 0 0;
+}
+.reset-btn {
+  font-size: 13px;
+  color: #ba0620;
+  cursor: pointer;
+  transition: all .3s;
+}
+.reset-btn:hover {
+  color: #777;
 }
 .search-btn:hover {
   background-color: #ba0620;
@@ -140,5 +179,12 @@ p {
   box-sizing: border-box;
   padding: 0 0 30px;
   margin: 0 0 50px;
+}
+.page-top {
+  position: absolute;
+  right: -200px;
+  bottom: 10px;
+  color: #000;
+  font-size: 13px;
 }
 </style>
