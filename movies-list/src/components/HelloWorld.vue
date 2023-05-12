@@ -36,7 +36,11 @@
       </ul>
     </section>
 
-  <a href="/" class="page-top">オサナイデ</a>
+    <footer>
+      <small>&copy; 2023 Disliked Movies List by R.YUKI Portfolio</small>
+    </footer>
+
+  <a href="" class="page-top" @click="scrollToTopButton">オサナイデ</a>
   </main>
 </template>
 
@@ -64,6 +68,12 @@ export default {
     },
     resetButton: function(){
       location.reload();
+    },
+    scrollToTopButton() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   }
 }
@@ -104,7 +114,7 @@ a {
 .content {
   width: 1024px;
   margin: 0 auto;
-  padding: 0 0 100px;
+  padding: 0;
   position: relative;
 }
 .search {
@@ -186,5 +196,8 @@ a {
   bottom: 10px;
   color: #000;
   font-size: 13px;
+}
+footer {
+  padding: 150px 0 10px;
 }
 </style>
