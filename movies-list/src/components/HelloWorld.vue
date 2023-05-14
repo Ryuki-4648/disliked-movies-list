@@ -2,6 +2,7 @@
   <main>
     <div class="content">
       <section class="intro">
+        <img src="../assets/logo.png" alt="ぜったいに見たくない映画リスト" class="logo">
         <h1 class="page-title">{{ msg }}</h1>
         <p class="text01">あらすじを読んで「絶対見たくない」と心に誓った映画、<br>うっかり見てしまい「二度と見ない」と決心した映画を集めました。</p>
       </section>
@@ -102,6 +103,7 @@ p {
 a {
   text-decoration: none;
 }
+
 .sp-only {
   display: none;
 }
@@ -113,6 +115,18 @@ a {
     display: block;
   }
 }
+
+.logo {
+  display: block;
+  margin: 100px auto 160px;
+}
+@media (max-width: 768px) {
+  .logo {
+    width: 90%;
+    margin: 60px auto 100px
+  }
+}
+
 .content {
   width: 1024px;
   margin: 0 auto;
@@ -121,6 +135,7 @@ a {
 }
 .page-title {
   letter-spacing: 0.05em;
+  font-size: 28px;
 }
 .intro {
   margin: 0 auto 140px;
@@ -131,13 +146,17 @@ a {
 }
 .text02 {
   line-height: 2;
-  font-size: 18px;
+  font-size: 21px;
   margin: 0 auto 20px;
   letter-spacing: 0.1em;
+  font-family: "ab-hasefude", sans-serif;
 }
 @media (max-width: 1024px) {
   .content {
     width: 90%;
+  }
+  .page-title {
+    font-size: 24px;
   }
   .intro {
     margin: 0 auto 80px;
@@ -160,6 +179,7 @@ a {
   width: 360px;
   height: 32px;
   padding: 1px 6px;
+  font-family: "ab-hasefude", sans-serif;
 }
 .search-btn {
   border: none;
@@ -172,7 +192,8 @@ a {
   height: 28px;
   cursor: pointer;
   transition: all .3s;
-  padding: 2px 0 0 0;
+  padding: 1px 0 0 0;
+  font-family: "ab-hasefude", sans-serif;
 }
 .search-btn:hover {
   background-color: #ba0620;
@@ -207,11 +228,11 @@ a {
   cursor: pointer;
   transition: all .3s;
   margin: 0 0 0 30px;
+  font-family: "ab-hasefude", sans-serif;
 }
 .reset-btn:hover {
   color: #777;
 }
-
 
 .movie-title {
   font-size: 24px;

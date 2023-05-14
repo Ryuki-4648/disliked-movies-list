@@ -7,6 +7,16 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <meta name=”description” content="ぜったいに見たくない映画リスト あらすじを読んで「絶対見たくない」と心に誓った映画、うっかり見てしまい「二度と見ない」と決心した映画を集めました。" />
     <title>ぜったいに見たくない映画リスト</title>
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'okt6hby',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
   </head>
   <body>
     <noscript>
