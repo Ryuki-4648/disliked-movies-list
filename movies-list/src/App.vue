@@ -23,8 +23,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #242021;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
 .logo {
   display: block;
   margin: 100px auto 160px;
+}
+@media (max-width: 768px) {
+  .logo {
+    width: 90%;
+    margin: 60px auto 100px
+  }
 }
 </style>
