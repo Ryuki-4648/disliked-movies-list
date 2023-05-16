@@ -2,7 +2,8 @@
   <main>
     <div class="content">
       <section class="intro">
-        <img src="../assets/logo.png" alt="ぜったいに見たくない映画リスト" class="logo">
+        <div class="intro-image"></div>
+        <!-- <img src="../assets/mainvisual.png" alt="ぜったいに見たくない映画リスト" class="logo"> -->
         <h1 class="page-title">{{ msg }}</h1>
         <p class="text01">あらすじを読んで「絶対見たくない」と心に誓った映画、<br>うっかり見てしまい「二度と見ない」と決心した映画を集めました。</p>
       </section>
@@ -47,7 +48,7 @@
         <small>&copy; 2023 Disliked Movies List <br class="sp-only">by R.YUKI Portfolio</small>
         <img src="../assets/img02.png" alt="" class="footer-img">
       </div>
-            <a href="" class="page-top" @click="scrollToTopButton">オサナイデ</a>
+      <a href="" class="page-top" @click="scrollToTopButton">オサナイデ</a>
     </footer>
   </main>
 </template>
@@ -123,7 +124,7 @@ a {
 @media (max-width: 768px) {
   .logo {
     width: 90%;
-    margin: 60px auto 100px
+    margin: 60px auto 100px;
   }
 }
 
@@ -139,6 +140,21 @@ a {
 }
 .intro {
   margin: 0 auto 140px;
+}
+.intro-image {
+  background-image: url("../assets/mainvisual.png");
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 100px auto 160px;
+}
+@media (max-width: 768px) {
+  .intro-image {
+    width: 90%;
+    height: 200px;
+    margin: 60px auto 40px;
+  }
 }
 .text01 {
   line-height: 2;
